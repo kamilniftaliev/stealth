@@ -1,4 +1,4 @@
-import { mapToDropdownItems } from "@/utils";
+import { textToCollectionItem } from "@/utils";
 
 export const LOCATIONS = [
   "New York, NY",
@@ -9,6 +9,6 @@ export const LOCATIONS = [
   "Boston, MA",
   "Houston, TX",
   "Austin, TX",
-].map(mapToDropdownItems);
+].map(textToCollectionItem);
 
 export type Location = (typeof LOCATIONS)[0];

@@ -5,7 +5,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import {
   Container,
   ContainerTitle,
+  Documents,
   Dropdown,
+  GROUPED_DOCUMENTS,
+  GroupedDocuments,
   Input,
   Tag,
   TagColors,
@@ -87,7 +90,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 ">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <Container>
         <ContainerTitle>Available Documents</ContainerTitle>
 
@@ -132,6 +135,7 @@ export default function Home() {
             label="Select All"
           />
         </div>
+        <GroupedDocuments groups={GROUPED_DOCUMENTS} />
       </Container>
     </main>
   );

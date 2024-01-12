@@ -1,5 +1,4 @@
-import cx from "clsx";
-
+import { cn } from "@/utils";
 import { Container, ContainerProps, Icon } from "..";
 
 type Props = ContainerProps & {
@@ -16,10 +15,13 @@ export function Checkbox({
   ...props
 }: Props) {
   return (
-    <div className="flex items-center gap-2 cursor-pointer" onClick={onClick}>
+    <div
+      className="flex items-center gap-2 cursor-pointer shrink-0"
+      onClick={onClick}
+    >
       <Container
         direction="row"
-        className={cx(
+        className={cn(
           "bg-gray-200 h-7 w-14 rounded-2xl p-1 border-0",
           className,
           isChecked && color
@@ -27,7 +29,7 @@ export function Checkbox({
         {...props}
       >
         <span
-          className={cx(
+          className={cn(
             "aspect-square h-full rounded-full bg-white left-full right-auto transition-transform",
             isChecked && "translate-x-7"
           )}

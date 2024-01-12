@@ -1,4 +1,4 @@
-import { mapToDropdownItems } from "@/utils";
+import { textToCollectionItem } from "@/utils";
 
 export const JOB_TEMPLATES = [
   "Heavy Equipment Operator",
@@ -15,6 +15,6 @@ export const JOB_TEMPLATES = [
   "Heavy Equipment Mechanic",
   "Loader Operator",
   "Off Road Truck Driver",
-].map(mapToDropdownItems);
+].map(textToCollectionItem);
 
 export type JobTemplate = (typeof JOB_TEMPLATES)[0];

@@ -3,7 +3,7 @@
  * @param label Text to map as a label
  * @returns An object for passing to <Dropdown />
  */
-export function mapToDropdownItems(label: string) {
+export function textToCollectionItem(label: string) {
   return {
     label,
     value: label.toLowerCase().replace(/\s+/g, "-"),

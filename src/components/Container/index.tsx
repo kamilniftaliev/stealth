@@ -1,5 +1,5 @@
-import { HTMLAttributes, PropsWithChildren, forwardRef } from "react";
-import cx from "clsx";
+import { cn } from "@/utils";
+import { HTMLAttributes, forwardRef } from "react";
 
 export type ContainerProps = HTMLAttributes<HTMLDivElement> & {
   direction?: "col" | "row";
@@ -9,7 +9,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(
   function Container({ direction = "col", className, ...props }, ref) {
     return (
       <div
-        className={cx(
+        className={cn(
           `flex flex-${direction} gap-3 bg-white rounded-lg border border-gray-300 p-4`,
           className
         )}
@@ -26,7 +26,7 @@ export function ContainerTitle({
 }: HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={cx("text-gray-900 font-medium text-base", className)}
+      className={cn("text-gray-900 font-medium text-base", className)}
       {...props}
     />
   );

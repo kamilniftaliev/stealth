@@ -1,4 +1,4 @@
-import { mapToDropdownItems } from "@/utils";
+import { textToCollectionItem } from "@/utils";
 
 export const POSITION_LEVELS = [
   "Entry-Level Position",
@@ -6,6 +6,6 @@ export const POSITION_LEVELS = [
   "Manager",
   "Office Staff",
   "Leadership / Management",
-].map(mapToDropdownItems);
+].map(textToCollectionItem);
 
 export type PositionLevel = (typeof POSITION_LEVELS)[0];

@@ -3,9 +3,9 @@ import {
   FontAwesomeIconProps,
 } from "@fortawesome/react-fontawesome";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import cx from "clsx";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import { cn } from "@/utils";
 
 config.autoAddCss = false;
 
@@ -16,6 +16,6 @@ export type IconProps = Pick<
 
 export function Icon({ className, ...props }: IconProps) {
   return (
-    <FontAwesomeIcon className={cx(`text-gray-600`, className)} {...props} />
+    <FontAwesomeIcon className={cn(`text-gray-600`, className)} {...props} />
   );
 }

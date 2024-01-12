@@ -1,12 +1,15 @@
 import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
 import { faChevronDown, faSearch } from "@fortawesome/free-solid-svg-icons";
-import cx from "clsx";
 
 import { Container, Icon, Input } from "..";
 import { useOutsideClick } from "@/hooks";
+import { cn } from "@/utils";
 
 type DropdownItem = {
+  /** Unique value for each dropdown item */
   value: string;
+
+  /** Actual text of the dropdown item */
   label: string;
 };
 
@@ -72,11 +75,13 @@ export function Dropdown({
         direction="row"
         className="py-2 px-2.5 justify-between items-center cursor-pointer"
       >
-        <span>{label}</span>
+        <span className="overflow-hidden text-nowrap text-ellipsis">
+          {label}
+        </span>
         <Icon icon={faChevronDown} />
       </Container>
       <Container
-        className={cx(
+        className={cn(
           "absolute top-full -left-1/2 mt-2 shadow-2xl transition-all z-10 px-1 pb-2 visible max-w-md",
           !isOpen && "-translate-y-3 opacity-0 invisible"
         )}

@@ -4,3 +4,4 @@ export * from "./Input";
 export * from "./Icon";
 export * from "./Dropdown";
 export * from "./Tag";
+export * from "./GroupedDocuments";

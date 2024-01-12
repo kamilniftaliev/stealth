@@ -1,4 +1,4 @@
-import { mapToDropdownItems } from "@/utils";
+import { textToCollectionItem } from "@/utils";
 
 export const SUBSIDIARIES = [
   "Subsidiary example 1",
@@ -9,6 +9,6 @@ export const SUBSIDIARIES = [
   "Subsidiary example 6",
   "Subsidiary example 7",
   "Subsidiary example 8",
-].map(mapToDropdownItems);
+].map(textToCollectionItem);
 
 export type Subsidiary = (typeof SUBSIDIARIES)[0];
