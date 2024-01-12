@@ -27,6 +27,7 @@ import {
   POSITION_LEVELS,
   PositionLevel,
 } from "@/constants";
+import { Checkbox } from "@/components/Checkbox";
 
 type SetState = Dispatch<
   SetStateAction<Array<JobTemplate | Location | Subsidiary | PositionLevel>>
@@ -34,6 +35,7 @@ type SetState = Dispatch<
 
 export default function Home() {
   const [searchValue, setSearchValue] = useState("");
+  const [selectedAllDocs, setSelectedAllDocs] = useState(false);
   const [jobTemplates, setJobTemplate] = useState<JobTemplate[]>([]);
   const [locations, setLocation] = useState<Location[]>([]);
   const [subsidiaries, setSubsidiary] = useState<Subsidiary[]>([]);
@@ -80,6 +82,10 @@ export default function Home() {
 
   const filterApplied = filters.some((filter) => !!filter.selectedItems.length);
 
+  const toggleAllDocs = useCallback(() => {
+    setSelectedAllDocs((isChecked) => !isChecked);
+  }, []);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 ">
       <Container>
@@ -115,6 +121,16 @@ export default function Home() {
               )}
             </Container>
           )}
+        </div>
+
+        <div className="flex items-center justify-between">
+          <p>53 Available Documents</p>
+          <Checkbox
+            isChecked={selectedAllDocs}
+            onClick={toggleAllDocs}
+            color="bg-orange-600"
+            label="Select All"
+          />
         </div>
       </Container>
     </main>
