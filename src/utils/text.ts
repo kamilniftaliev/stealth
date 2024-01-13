@@ -9,3 +9,13 @@ export function textToCollectionItem(label: string) {
     value: label.toLowerCase().replace(/\s+/g, "-"),
   };
 }
+
+/**
+ * Searches for given search term in a string
+ * @param text String to search in for a match
+ * @param searchTerm Subtext to look for
+ * @returns Boolean - found a match or not
+ */
+export function match(text: string, searchTerm: string) {
+  return text.trim().toLowerCase().includes(searchTerm.trim().toLowerCase());
+}

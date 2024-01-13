@@ -3,7 +3,7 @@ import { faChevronDown, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { Container, Icon, Input } from "..";
 import { useOutsideClick } from "@/hooks";
-import { cn } from "@/utils";
+import { cn, match } from "@/utils";
 
 type DropdownItem = {
   /** Unique value for each dropdown item */
@@ -57,11 +57,7 @@ export function Dropdown({
 
         if (isSelected) return false;
 
-        const matchesSearch = label
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
-
-        return matchesSearch;
+        return match(label, searchTerm);
       }),
     [items, searchTerm, selectedItems]
   );

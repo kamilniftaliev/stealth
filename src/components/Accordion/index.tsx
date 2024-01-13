@@ -19,7 +19,7 @@ export function Accordion({ button, body }: Props) {
     <div className="flex flex-col cursor-pointer shrink-0">
       <Container
         direction="row"
-        className="bg-gray-100 border-gray-200 p-5 w-full justify-between items-center"
+        className="bg-gray-100 border-gray-200 p-5 w-full justify-between items-center rounded-none"
         onClick={toggle}
       >
         <div>{button}</div>

@@ -5,3 +5,4 @@ export * from "./Icon";
 export * from "./Dropdown";
 export * from "./Tag";
 export * from "./GroupedDocuments";
+export * from "./SelectedDocuments";
