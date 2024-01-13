@@ -1,21 +1,41 @@
 import { cn, match } from "@/utils";
-import { faArrowLeft, faCheck, faClose, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faCheck,
+  faClose,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import { Container, ContainerTitle, Document, Icon, Input } from "..";
-import { ChangeEvent, useCallback, useState } from "react";
+import {
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useState,
+} from "react";
 
 type Props = {
-  documents: Document[];
-  unselect: (docId: Document["id"]) => void
-}
+  selectedDocs: Document[];
+  setSelectedDocs: Dispatch<SetStateAction<Document[]>>;
+};
 
-export function SelectedDocuments({ documents: originalDocs, unselect }: Props) {
+export function SelectedDocuments({ selectedDocs, setSelectedDocs }: Props) {
   const [searchValue, setSearchValue] = useState("");
-  
+
   const onSearch = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   }, []);
 
-  const documents = originalDocs.filter(doc => match(doc.name, searchValue))
+  const unselectDocument = useCallback(
+    (docId: Document["id"]) => {
+      setSelectedDocs((selectedDocs: Document[]) =>
+        selectedDocs.filter(({ id }) => id !== docId)
+      );
+    },
+    [setSelectedDocs]
+  );
+
+  const documents = selectedDocs.filter((doc) => match(doc.name, searchValue));
 
   const noSelectedDocs = !documents.length;
 
@@ -42,12 +62,14 @@ export function SelectedDocuments({ documents: originalDocs, unselect }: Props) 
         <Container className="border-green-600 gap-3">
           {documents.map(({ id, name }) => (
             <div
-              className="flex gap-2 items-center cursor-pointer"
-              onClick={() => unselect(id)}
               key={id}
+              onClick={() => unselectDocument(id)}
+              className="flex gap-2 items-center cursor-pointer"
             >
               <Icon className="text-green-600" icon={faCheck} />
-              <span className="grow py-2 overflow-hidden text-nowrap text-ellipsis">{name}</span>
+              <span className="grow py-2 overflow-hidden text-nowrap text-ellipsis">
+                {name}
+              </span>
               <button
                 className={cn(
                   "box-border border border-gray-300 rounded w-6 h-6"
