@@ -1,7 +1,7 @@
 import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
-import { faChevronDown, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faClose, faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import { Container, Icon, Input } from "..";
+import { Container, ContainerTitle, Icon, Input } from "..";
 import { useOutsideClick } from "@/hooks";
 import { cn, match } from "@/utils";
 
@@ -55,9 +55,7 @@ export function Dropdown({
       items.filter(({ label, value }) => {
         const isSelected = selectedItems.some((item) => item.value === value);
 
-        if (isSelected) return false;
-
-        return match(label, searchTerm);
+        return isSelected ? false : match(label, searchTerm);
       }),
     [items, searchTerm, selectedItems]
   );
@@ -65,7 +63,7 @@ export function Dropdown({
   const noResults = !filteredItems.length;
 
   return (
-    <div className="relative select-none flex-grow" ref={containerRef}>
+    <div className="md:relative select-none flex-grow" ref={containerRef}>
       <Container
         onClick={open}
         direction="row"
@@ -78,10 +76,14 @@ export function Dropdown({
       </Container>
       <Container
         className={cn(
-          "absolute top-full -left-1/2 mt-2 shadow-2xl transition-all z-10 px-1 pb-2 visible max-w-md",
-          !isOpen && "-translate-y-3 opacity-0 invisible"
+          "fixed md:absolute top-0 md:top-full left-0 md:left-auto md:mt-2 w-screen md:w-auto h-screen md:h-auto md:shadow-2xl transition-all z-10 px-1 pb-2 visible md:max-w-md",
+          !isOpen && "-scale-50 md:scale-100 md:-translate-y-3 opacity-0 invisible duration-300"
         )}
       >
+        <div className="flex justify-between items-center px-4 md:hidden">
+          <ContainerTitle className="text-2xl">{label}</ContainerTitle>
+          <Icon icon={faClose} className="text-3xl" onClick={close} />
+        </div>
         <div className="px-3">
           <Input
             icon={faSearch}
@@ -93,7 +95,7 @@ export function Dropdown({
         {noResults ? (
           <p className="py-2 text-center">No Results</p>
         ) : (
-          <ul className="flex flex-col gap-y-1 max-h-96 overflow-y-auto px-2">
+          <ul className="flex flex-col gap-y-1 md:max-h-96 overflow-y-auto px-2">
             {filteredItems.map((item) => (
               <li
                 onClick={() => handleSelect(item)}

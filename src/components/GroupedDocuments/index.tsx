@@ -31,6 +31,9 @@ export function GroupedDocuments({
           key={id}
           button={title}
           body={
+            !documents.length ? (
+              <p className="text-gray-500 text-xs font-semibold text-center py-4">No documents here</p>
+            ) : (
             <ul className="flex flex-col p-2 gap-2.5">
               {documents.map((doc) => {
                 const isSelected = selectedDocuments.some(
@@ -58,6 +61,7 @@ export function GroupedDocuments({
                 );
               })}
             </ul>
+            )
           }
         />
       ))}

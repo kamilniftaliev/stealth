@@ -10,7 +10,7 @@ export function Input({ icon, className, ...inputProps }: Props) {
   return (
     <Container direction="row" className="py-0 items-center">
       {icon && <Icon icon={icon} />}
-      <input className={cn("outline-0 py-2", className)} {...inputProps} />
+      <input className={cn("outline-0 py-2 grow", className)} {...inputProps} />
     </Container>
   );
 }

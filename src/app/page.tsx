@@ -40,7 +40,6 @@ type SetState = Dispatch<
 
 export default function Home() {
   const [searchValue, setSearchValue] = useState("");
-  const [selectedAllDocs, setSelectedAllDocs] = useState(false);
   const [jobTemplates, setJobTemplate] = useState<JobTemplate[]>([]);
   const [locations, setLocation] = useState<Location[]>([]);
   const [subsidiaries, setSubsidiary] = useState<Subsidiary[]>([]);
@@ -93,11 +92,21 @@ export default function Home() {
         }
   );
 
+  const groupedDocuments = GROUPED_DOCUMENTS.map(({ documents, ...group }) => ({
+    ...group,
+    documents: documents.filter((doc) => match(doc.name, searchValue)),
+  }));
+
+  const documents = groupedDocuments.map((group) => group.documents).flat();
+  const docsCount = documents.length;
+
   const filterApplied = filters.some((filter) => !!filter.selectedItems.length);
 
+  const selectedAllDocs = docsCount > 0 && docsCount === selectedDocs.length;
+
   const toggleAllDocs = useCallback(() => {
-    setSelectedAllDocs((isChecked) => !isChecked);
-  }, []);
+    setSelectedDocs(selectedAllDocs ? [] : documents);
+  }, [selectedAllDocs, documents]);
 
   const handleDocumentSelect = useCallback((doc: Document) => {
     setSelectedDocs((selectedDocs: Document[]) => {
@@ -118,9 +127,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col justify-between p-24 gap-y-6">
+    <main className="flex min-h-screen flex-col justify-between p-4 md:p-24 gap-y-6">
       <Container className="p-6">
-        <ContainerTitle className="text-lg font-semibold">
+        <ContainerTitle className="text-xl md:text-lg font-semibold">
           Which agreements, forms and notices should be sent to Jason Smith?
         </ContainerTitle>
         <ContainerTitle className="">
@@ -133,7 +142,7 @@ export default function Home() {
           Select the agreements, notices and documents you want Jason Smith to
           sign
         </p>
-        <div className="flex gap-6 w-full">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full">
           <Container className="flex-1">
             <ContainerTitle>Available Documents</ContainerTitle>
 
@@ -170,7 +179,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-between">
-              <p>53 Available Documents</p>
+              <p>{docsCount} Available Documents</p>
               <Checkbox
                 isChecked={selectedAllDocs}
                 onClick={toggleAllDocs}
@@ -179,7 +188,7 @@ export default function Home() {
               />
             </div>
             <GroupedDocuments
-              groups={GROUPED_DOCUMENTS}
+              groups={groupedDocuments}
               selectedDocuments={selectedDocs}
               onDocumentSelect={handleDocumentSelect}
             />

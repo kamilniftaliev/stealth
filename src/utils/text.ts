@@ -17,5 +17,9 @@ export function textToCollectionItem(label: string) {
  * @returns Boolean - found a match or not
  */
 export function match(text: string, searchTerm: string) {
-  return text.trim().toLowerCase().includes(searchTerm.trim().toLowerCase());
+  const term = searchTerm.trim();
+
+  if (!term) return true;
+
+  return text.trim().toLowerCase().includes(term.toLowerCase());
 }

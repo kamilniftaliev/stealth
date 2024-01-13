@@ -1,4 +1,4 @@
-import { cn } from "@/utils";
+import { cn, match } from "@/utils";
 import { faArrowLeft, faCheck, faClose, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Container, ContainerTitle, Document, Icon, Input } from "..";
 import { ChangeEvent, useCallback, useState } from "react";
@@ -8,12 +8,14 @@ type Props = {
   unselect: (docId: Document["id"]) => void
 }
 
-export function SelectedDocuments({ documents, unselect }: Props) {
+export function SelectedDocuments({ documents: originalDocs, unselect }: Props) {
   const [searchValue, setSearchValue] = useState("");
   
   const onSearch = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   }, []);
+
+  const documents = originalDocs.filter(doc => match(doc.name, searchValue))
 
   const noSelectedDocs = !documents.length;
 
@@ -45,7 +47,7 @@ export function SelectedDocuments({ documents, unselect }: Props) {
               key={id}
             >
               <Icon className="text-green-600" icon={faCheck} />
-              <span className="grow py-2">{name}</span>
+              <span className="grow py-2 overflow-hidden text-nowrap text-ellipsis">{name}</span>
               <button
                 className={cn(
                   "box-border border border-gray-300 rounded w-6 h-6"

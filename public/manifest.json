@@ -1,0 +1,98 @@
+{
+  "id": "/?source=pwa",
+  "name": "Stealth",
+  "short_name": "Stealth",
+  "start_url": "/?source=pwa",
+  "display": "fullscreen",
+  "background_color": "#FF5A1F",
+  "theme_color": "#FF5A1F",
+  "scope": "/",
+  "description": "Stealth Dashboard - Select Agreements, Notices and Other Documents",
+  "icons": [
+    {
+      "src": "/images/logo/48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo/72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo/96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo/168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo/192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshots/mobile-1.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "platform": "android ios",
+      "form_factor": "narrow",
+      "label": "Search filters"
+    },
+    {
+      "src": "/images/screenshots/mobile-2.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "platform": "android ios",
+      "form_factor": "narrow",
+      "label": "Categories of documents - Accordions"
+    },
+    {
+      "src": "/images/screenshots/mobile-3.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "platform": "android ios",
+      "form_factor": "narrow",
+      "label": "List of selected documents"
+    },
+    {
+      "src": "/images/screenshots/mobile-4.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "platform": "android ios",
+      "form_factor": "narrow",
+      "label": "Search filter opened"
+    },
+    {
+      "src": "/images/screenshots/desktop-1.png",
+      "sizes": "1908x1738",
+      "type": "image/png",
+      "platform": "macos windows xbox chromeos",
+      "form_factor": "wide",
+      "label": "Search filters with selected documents"
+    },
+    {
+      "src": "/images/screenshots/desktop-2.png",
+      "sizes": "1908x1738",
+      "type": "image/png",
+      "platform": "macos windows xbox chromeos",
+      "form_factor": "wide",
+      "label": "Categories of documents - Accordions"
+    }
+  ]
+}

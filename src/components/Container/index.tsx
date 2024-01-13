@@ -26,7 +26,7 @@ export function ContainerTitle({
 }: HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={cn("text-gray-900 font-medium text-base", className)}
+      className={cn("text-gray-900 font-medium text-lg md:text-base", className)}
       {...props}
     />
   );
