@@ -10,11 +10,11 @@ This is a progressive web app (PWA). You can install it on your mobile and deskt
 
 ##### Desktop - Filters with documents
 
-<img src=https://github.com/kamilniftaliev/stealth/assets/6189175/a2784310-d314-429a-a07a-96311d1d03b0 alt="Desktop - Filters with documents" height="400" />
+<img src=https://github.com/kamilniftaliev/stealth/assets/6189175/f9429311-68b4-4405-adbd-39019efaeb3b alt="Desktop - Filters with documents" height="400" />
 
 ##### Desktop - List of grouped documents/accordions
 
-<img src=https://github.com/kamilniftaliev/stealth/assets/6189175/d06a5fed-b52d-4894-8d40-5ae991a3a293 alt="Desktop - List of grouped documents/accordions" height="400" />
+<img src=https://github.com/kamilniftaliev/stealth/assets/6189175/f4b1c03d-7064-43e3-94b7-379f450cf6a9 alt="Desktop - List of grouped documents/accordions" height="400" />
 
 ##### Mobile - Search filters
 
