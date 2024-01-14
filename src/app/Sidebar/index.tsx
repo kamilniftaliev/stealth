@@ -14,10 +14,16 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <Container className="group hidden sm:flex pt-7 pb-4 px-3 bg-sidebar min-w-16 w-16 hover:w-96 transition-all overflow-hidden border-none rounded-none gap-y-7">
+    <Container className="group hidden sm:flex pt-7 pb-4 px-3 bg-sidebar min-w-sidebar w-sidebar hover:w-sidebar-open shrink-0 transition-all overflow-hidden border-none rounded-none gap-y-7">
       <Link href="/">
-        <div className="flex items-center gap-3">
-          <Image width={40} height={40} src="/images/logo/48.png" alt="Logo" />
+        <div className="flex items-center gap-4 pl-0.5">
+          <Image
+            className="shrink-0"
+            width={32}
+            height={32}
+            src="/images/logo/48.png"
+            alt="Logo"
+          />
           <span className={cn("text-3xl text-orange-700", breeFont.className)}>
             Mason
           </span>
@@ -33,8 +39,8 @@ export function Sidebar() {
               key={id}
               href={path}
               className={cn(
-                "flex flex-nowrap gap-4 px-0.5 items-center text-gray-400 hover:text-white hover:bg-orange-500 rounded-md transition-colors",
-                isActive && "bg-orange-500 text-white"
+                "flex flex-nowrap gap-4 items-center text-gray-400 hover:text-white hover:bg-primary rounded-md transition-colors",
+                isActive && "bg-primary text-white"
               )}
             >
               <button className="flex items-center justify-center w-9 aspect-square shrink-0 rounded-md">
@@ -52,7 +58,7 @@ export function Sidebar() {
             icon={faUserCircle}
           />
         </div>
-        <div className="flex group-hover:translate-y-0 w-96 group-hover:w-full translate-y-44 transition-transform flex-col">
+        <div className="flex group-hover:translate-y-0 w-sidebar group-hover:w-full translate-y-44 transition-transform flex-col">
           <Accordion
             icon={faBuilding}
             title="AC Electric Co."

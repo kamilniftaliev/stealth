@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#ff5a1f",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -18,6 +21,10 @@ const config: Config = {
       },
       fontFamily: {
         bree: '"Bree Serif", serif',
+      },
+      width: {
+        sidebar: "61px",
+        "sidebar-open": "280px",
       },
     },
   },

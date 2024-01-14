@@ -33,8 +33,7 @@ export function Header() {
               )}
               <Button
                 className={cn(
-                  isSelected &&
-                    "border-orange-500 bg-orange-50 text-orange-500",
+                  isSelected && "border-primary bg-orange-50 text-primary",
                   isPreviousStep && "text-green-600"
                 )}
                 onClick={() => setCurrentStep(index)}

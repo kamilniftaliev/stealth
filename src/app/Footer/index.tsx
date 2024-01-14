@@ -14,7 +14,7 @@ export function Footer() {
         Back
       </Button>
       <Button
-        className="border-0 bg-orange-500 text-white"
+        className="border-0 bg-primary text-white"
         size="xs"
         rightIcon={faChevronRight}
       >
