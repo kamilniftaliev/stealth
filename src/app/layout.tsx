@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Sidebar } from "./Sidebar";
+import { inter } from "@/constants";
 
 const title = "Stealth";
-const description = "Stealth Dashboard - Select Agreements, Notices and Other Documents";
-const DOMAIN = 'https://stealth-documents.netlify.app/';
+const description =
+  "Stealth Dashboard - Select Agreements, Notices and Other Documents";
+const DOMAIN = "https://stealth-documents.netlify.app/";
 
 export const metadata: Metadata = {
   title,
   description,
-  keywords:
-    "stealth, documents, agreements",
+  keywords: "stealth, documents, agreements",
   robots: "index, follow",
   manifest: "/manifest.json",
   icons: {
@@ -48,7 +47,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} md:text-sm bg-gray-50`}>{children}</body>
+      <body className={`${inter.className} md:text-sm bg-gray-50`}>
+        <div className="flex min-h-screen">
+          <Sidebar />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

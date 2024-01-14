@@ -1,5 +1,6 @@
 import { cn } from "@/utils";
 import { HTMLAttributes, forwardRef } from "react";
+import { CONTAINER_TITLE_SIZES } from "./constants";
 
 export type ContainerProps = HTMLAttributes<HTMLDivElement> & {
   direction?: "col" | "row";
@@ -20,14 +21,18 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(
   }
 );
 
+type ContainerTitleProps = HTMLAttributes<HTMLParagraphElement> & {
+  size?: keyof typeof CONTAINER_TITLE_SIZES;
+};
+
 export function ContainerTitle({
   className,
+  size = "sm",
   ...props
-}: HTMLAttributes<HTMLParagraphElement>) {
+}: ContainerTitleProps) {
+  const sizeClasses = CONTAINER_TITLE_SIZES[size];
+
   return (
-    <p
-      className={cn("text-gray-900 font-medium text-lg md:text-base", className)}
-      {...props}
-    />
+    <p className={cn("text-gray-900", sizeClasses, className)} {...props} />
   );
 }
