@@ -1,8 +1,8 @@
 import {
-  faFile,
+  faComments,
+  faFolder,
   faGear,
   faHome,
-  faMessage,
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,7 +23,7 @@ export const MENU_ITEMS = [
     id: "messaging",
     path: "/messaging",
     text: "Messaging",
-    icon: faMessage,
+    icon: faComments,
   },
   {
     id: "settings",
@@ -35,6 +35,6 @@ export const MENU_ITEMS = [
     id: "files",
     path: "/files",
     text: "Files",
-    icon: faFile,
+    icon: faFolder,
   },
 ];

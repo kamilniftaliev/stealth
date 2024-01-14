@@ -6,7 +6,7 @@ import { inter } from "@/constants";
 const title = "Stealth";
 const description =
   "Stealth Dashboard - Select Agreements, Notices and Other Documents";
-const DOMAIN = "https://stealth-documents.netlify.app/";
+const DOMAIN = new URL("https://stealth-documents.netlify.app/");
 
 export const metadata: Metadata = {
   title,
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     icon: `${DOMAIN}images/logo/192.png`,
     apple: `${DOMAIN}images/logo/192.png`,
   },
+  metadataBase: DOMAIN,
   openGraph: {
     type: "website",
     url: DOMAIN,
