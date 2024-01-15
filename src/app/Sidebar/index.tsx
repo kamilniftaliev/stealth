@@ -46,7 +46,7 @@ export function Sidebar() {
         )}
       >
         <Link href="/">
-          <div className="flex items-center gap-4 pl-0.5 pr-2">
+          <div className="flex items-center gap-4 pl-0.5 pr-2 sm:pr-0">
             <Image
               className="shrink-0"
               width={32}
@@ -59,11 +59,13 @@ export function Sidebar() {
             >
               Mason
             </span>
-            <Icon
-              onClick={closeOnMobile}
-              className="ml-auto text-3xl text-gray-400"
-              icon={faClose}
-            />
+            <div className="ml-auto sm:hidden">
+              <Icon
+                onClick={closeOnMobile}
+                className="text-3xl text-gray-400"
+                icon={faClose}
+              />
+            </div>
           </div>
           <hr className="mt-8 border-gray-700" />
         </Link>
@@ -93,7 +95,7 @@ export function Sidebar() {
           <div
             className={cn(
               "pt-4 border-t border-gray-700 absolute bottom-8 sm:group-hover:relative sm:group-hover:bottom-0 sm:group-hover:border-0",
-              isOpenOnMobile && "-bottom-14"
+              isOpenOnMobile && "-bottom-14 sm:bottom-8"
             )}
           >
             <Icon
@@ -106,7 +108,7 @@ export function Sidebar() {
           <div
             className={cn(
               "flex sm:group-hover:translate-y-0 sm:w-60 translate-y-44 transition-transform flex-col",
-              isOpenOnMobile && "translate-y-0 w-full"
+              isOpenOnMobile && "translate-y-0 sm:translate-y-44 w-full sm:w-60"
             )}
           >
             <Accordion
