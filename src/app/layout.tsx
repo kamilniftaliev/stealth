@@ -10,7 +10,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} md:text-sm bg-gray-50`}>
-        <div className="flex flex-col sm:flex-row min-h-screen sm:pl-sidebar overflow-hidden sm:overflow-auto">
+        <div className="flex flex-col sm:flex-row sm:pl-sidebar overflow-hidden sm:overflow-auto">
           <Sidebar />
           {children}
         </div>

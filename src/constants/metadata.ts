@@ -3,7 +3,10 @@ import type { Metadata } from "next";
 const title = "Stealth";
 const description =
   "Stealth Dashboard - Select Agreements, Notices and Other Documents";
-const DOMAIN = new URL(process.env.URL as string);
+
+const DOMAIN_URL = process.env.URL || "http://localhost:3000";
+
+const DOMAIN = new URL(DOMAIN_URL);
 
 export const metadata: Metadata = {
   title,
