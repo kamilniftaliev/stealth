@@ -1,14 +1,14 @@
 import { textToCollectionItem } from "@/utils";
+import { faker } from "@faker-js/faker";
 
-export const LOCATIONS = [
-  "New York, NY",
-  "Los Angeles, CA",
-  "San Francisco, CA",
-  "Miami, FL",
-  "Chicago, IL",
-  "Boston, MA",
-  "Houston, TX",
-  "Austin, TX",
-].map(textToCollectionItem);
+faker.seed(1);
+
+export const LOCATIONS = Array(50)
+  .fill(null)
+  .map(
+    () =>
+      `${faker.location.city()}, ${faker.location.state({ abbreviated: true })}`
+  )
+  .map(textToCollectionItem);
 
 export type Location = (typeof LOCATIONS)[0];

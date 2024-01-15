@@ -1,3 +1,7 @@
+import { faker } from "@faker-js/faker";
+
+faker.seed(1);
+
 /**
  * Maps a string to an object for using in an array when passing to <Dropdown items={[...]} />
  * @param label Text to map as a label
@@ -6,7 +10,7 @@
 export function textToCollectionItem(label: string) {
   return {
     label,
-    value: label.toLowerCase().replace(/\s+/g, "-"),
+    value: label.toLowerCase().replace(/\s+/g, "-") + faker.string.uuid(),
   };
 }
 

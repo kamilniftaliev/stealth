@@ -1,14 +1,11 @@
 import { textToCollectionItem } from "@/utils";
+import { faker } from "@faker-js/faker";
 
-export const SUBSIDIARIES = [
-  "Subsidiary example 1",
-  "Subsidiary example 2",
-  "Subsidiary example 3",
-  "Subsidiary example 4",
-  "Subsidiary example 5",
-  "Subsidiary example 6",
-  "Subsidiary example 7",
-  "Subsidiary example 8",
-].map(textToCollectionItem);
+faker.seed(1);
+
+export const SUBSIDIARIES = Array(50)
+  .fill(null)
+  .map(faker.company.name)
+  .map(textToCollectionItem);
 
 export type Subsidiary = (typeof SUBSIDIARIES)[0];

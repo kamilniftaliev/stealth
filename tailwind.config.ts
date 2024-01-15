@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const sidebarWidth = "61px";
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,11 +13,6 @@ const config: Config = {
       colors: {
         primary: "#ff5a1f",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       backgroundColor: {
         sidebar: "#292D53",
       },
@@ -23,8 +20,11 @@ const config: Config = {
         bree: '"Bree Serif", serif',
       },
       width: {
-        sidebar: "61px",
+        sidebar: sidebarWidth,
         "sidebar-open": "280px",
+      },
+      padding: {
+        sidebar: sidebarWidth,
       },
     },
   },

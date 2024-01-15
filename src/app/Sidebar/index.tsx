@@ -14,7 +14,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <Container className="group hidden sm:flex pt-7 pb-4 px-3 bg-sidebar min-w-sidebar w-sidebar hover:w-sidebar-open shrink-0 transition-all overflow-hidden border-none rounded-none gap-y-7">
+    <Container className="absolute h-screen left-0 z-10 group hidden sm:flex pt-7 pb-4 px-3 bg-sidebar min-w-sidebar w-sidebar hover:w-sidebar-open shrink-0 transition-all overflow-hidden border-none rounded-none gap-y-7">
       <Link href="/">
         <div className="flex items-center gap-4 pl-0.5">
           <Image
@@ -58,7 +58,7 @@ export function Sidebar() {
             icon={faUserCircle}
           />
         </div>
-        <div className="flex group-hover:translate-y-0 w-sidebar group-hover:w-full translate-y-44 transition-transform flex-col">
+        <div className="flex group-hover:translate-y-0 w-60 translate-y-44 transition-transform flex-col">
           <Accordion
             icon={faBuilding}
             title="AC Electric Co."
