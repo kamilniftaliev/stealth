@@ -3,5 +3,7 @@
 import { PropsWithChildren } from "react";
 
 export default function Template({ children }: PropsWithChildren) {
-  return <div className="m-auto">{children}</div>;
+  return (
+    <main className="flex items-center justify-center grow">{children}</main>
+  );
 }

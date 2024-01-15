@@ -16,7 +16,7 @@ export default function Home() {
   const [selectedDocs, setSelectedDocs] = useState<Document[]>([]);
 
   return (
-    <main className="flex flex-col grow max-h-screen">
+    <div className="flex flex-col grow max-h-screen self-start h-full">
       <Header />
       <div className="grow flex flex-col justify-start p-4 sm:p-12 lg:p-20 gap-y-6 overflow-y-auto">
         <Container className="p-6">
@@ -47,6 +47,6 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-    </main>
+    </div>
   );
 }
