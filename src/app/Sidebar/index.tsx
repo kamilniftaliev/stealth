@@ -29,15 +29,17 @@ export function Sidebar() {
 
   return (
     <>
-      <div className="relative text-center sm:hidden py-2 px-4">
+      <div className="flex items-center justify-center relative text-center sm:hidden py-2.5 px-4 border-b bg-sidebar h-top-nav">
         <Button
           onClick={() => setIsOpenOnMobile(true)}
           size="md"
-          className="absolute block sm:hidden rounded-base self-start"
+          className="absolute left-4 block sm:hidden rounded-base self-start bg-inherit border-gray-500"
         >
-          <Icon icon={faBars} />
+          <Icon icon={faBars} className="text-white" />
         </Button>
-        <span className="font-semibold">{pageTitle}</span>
+        <span className="font-semibold text-white self-center">
+          {pageTitle}
+        </span>
       </div>
       <Container
         className={cn(

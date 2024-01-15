@@ -2,6 +2,8 @@ import type { Config } from "tailwindcss";
 
 const sidebarWidth = "61px";
 
+const topNavHeight = "50px";
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -22,6 +24,11 @@ const config: Config = {
       width: {
         sidebar: sidebarWidth,
         "sidebar-open": "280px",
+      },
+      height: {
+        // Height without the top navigation bar
+        content: `calc(100vh - ${topNavHeight})`,
+        "top-nav": topNavHeight,
       },
       padding: {
         sidebar: sidebarWidth,

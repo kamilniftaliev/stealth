@@ -4,6 +4,8 @@ import { PropsWithChildren } from "react";
 
 export default function Template({ children }: PropsWithChildren) {
   return (
-    <main className="flex items-center justify-center grow">{children}</main>
+    <main className="flex items-center justify-center grow h-content">
+      {children}
+    </main>
   );
 }
