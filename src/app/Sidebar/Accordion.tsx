@@ -1,7 +1,7 @@
-import { Icon, IconProps, Accordion as OriginalAccordion } from "@/components";
-import { ReactNode } from "react";
+import { Icon, IconProps, Accordion as OriginalAccordion } from '@/components';
+import { ReactNode } from 'react';
 
-type Props = Pick<IconProps, "icon"> & {
+type Props = Pick<IconProps, 'icon'> & {
   title: string;
   description: string;
   body?: ReactNode;

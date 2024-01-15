@@ -1,8 +1,8 @@
-import { Button, Container, ContainerTitle, Icon } from "@/components";
-import { STEPS } from "./constants";
-import { faArrowRight, faClose } from "@fortawesome/free-solid-svg-icons";
-import { Fragment, useState } from "react";
-import { cn } from "@/utils";
+import { Button, Container, ContainerTitle, Icon } from '@/components';
+import { STEPS } from './constants';
+import { faArrowRight, faClose } from '@fortawesome/free-solid-svg-icons';
+import { Fragment, useState } from 'react';
+import { cn } from '@/utils';
 
 export function Header() {
   const [currentStep, setCurrentStep] = useState(4);
@@ -33,8 +33,8 @@ export function Header() {
               )}
               <Button
                 className={cn(
-                  isSelected && "border-primary bg-orange-50 text-primary",
-                  isPreviousStep && "text-green-600"
+                  isSelected && 'border-primary bg-orange-50 text-primary',
+                  isPreviousStep && 'text-green-600',
                 )}
                 onClick={() => setCurrentStep(index)}
                 size="md"

@@ -1,13 +1,13 @@
-import { cn } from "@/utils";
-import { Container, ContainerProps, Icon } from "..";
-import { ReactNode, useCallback, useState } from "react";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { cn } from '@/utils';
+import { Container, ContainerProps, Icon } from '..';
+import { ReactNode, useCallback, useState } from 'react';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
   button: ReactNode;
   body: ReactNode;
-  buttonClassName?: ContainerProps["className"];
-  bodyClassName?: ContainerProps["className"];
+  buttonClassName?: ContainerProps['className'];
+  bodyClassName?: ContainerProps['className'];
 };
 
 export function Accordion({
@@ -27,8 +27,8 @@ export function Accordion({
       <Container
         direction="row"
         className={cn(
-          "bg-gray-100 border-gray-200 p-5 w-full justify-between items-center rounded-none",
-          buttonClassName
+          'bg-gray-100 border-gray-200 p-5 w-full justify-between items-center rounded-none',
+          buttonClassName,
         )}
         onClick={toggle}
       >
@@ -39,8 +39,8 @@ export function Accordion({
         />
       </Container>
       <Container
-        className={cn("p-0 border-0 overflow-hidden", bodyClassName, {
-          "h-0": !isOpen,
+        className={cn('p-0 border-0 overflow-hidden', bodyClassName, {
+          'h-0': !isOpen,
         })}
       >
         {body}

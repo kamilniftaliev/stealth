@@ -1,9 +1,13 @@
-import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
-import { faChevronDown, faClose, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  faChevronDown,
+  faClose,
+  faSearch,
+} from '@fortawesome/free-solid-svg-icons';
 
-import { Container, ContainerTitle, Icon, Input } from "..";
-import { useOutsideClick } from "@/hooks";
-import { cn, match } from "@/utils";
+import { Container, ContainerTitle, Icon, Input } from '..';
+import { useOutsideClick } from '@/hooks';
+import { cn, match } from '@/utils';
 
 type DropdownItem = {
   /** Unique value for each dropdown item */
@@ -27,7 +31,7 @@ export function Dropdown({
   items: originalItems,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [items, setItems] = useState(originalItems);
 
   const close = useCallback(() => setIsOpen(false), []);
@@ -47,7 +51,7 @@ export function Dropdown({
     (item: DropdownItem) => {
       onSelect([...selectedItems, item]);
     },
-    [onSelect, selectedItems]
+    [onSelect, selectedItems],
   );
 
   const filteredItems = useMemo(
@@ -57,7 +61,7 @@ export function Dropdown({
 
         return isSelected ? false : match(label, searchTerm);
       }),
-    [items, searchTerm, selectedItems]
+    [items, searchTerm, selectedItems],
   );
 
   const noResults = !filteredItems.length;
@@ -76,8 +80,9 @@ export function Dropdown({
       </Container>
       <Container
         className={cn(
-          "fixed md:absolute top-0 md:top-full left-0 md:left-auto md:mt-2 w-screen md:w-auto h-screen md:h-auto md:shadow-2xl transition-all z-10 px-1 pb-2 visible md:max-w-md",
-          !isOpen && "-scale-50 md:scale-100 md:-translate-y-3 opacity-0 invisible duration-300"
+          'fixed md:absolute top-0 md:top-full left-0 md:left-auto md:mt-2 w-screen md:w-auto h-screen md:h-auto md:shadow-2xl transition-all z-10 px-1 pb-2 visible md:max-w-md',
+          !isOpen &&
+            '-scale-50 md:scale-100 md:-translate-y-3 opacity-0 invisible duration-300',
         )}
       >
         <div className="flex justify-between items-center px-4 md:hidden">

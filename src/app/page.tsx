@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   AvailableDocuments,
@@ -6,11 +6,10 @@ import {
   ContainerTitle,
   Document,
   SelectedDocuments,
-} from "@/components";
-import { useState } from "react";
-import { Header } from "./Header";
-import { Sidebar } from "./Sidebar";
-import { Footer } from "./Footer";
+} from '@/components';
+import { useState } from 'react';
+import { Header } from './Header';
+import { Footer } from './Footer';
 
 export default function Home() {
   const [selectedDocs, setSelectedDocs] = useState<Document[]>([]);

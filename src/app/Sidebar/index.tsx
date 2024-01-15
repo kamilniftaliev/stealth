@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { Button, Container, Icon } from "@/components";
-import Image from "next/image";
-import Link from "next/link";
-import { MENU_ITEMS } from "./constants";
-import { breeFont } from "@/constants";
-import { cn } from "@/utils";
-import { usePathname } from "next/navigation";
+import { Button, Container, Icon } from '@/components';
+import Image from 'next/image';
+import Link from 'next/link';
+import { MENU_ITEMS } from './constants';
+import { breeFont } from '@/constants';
+import { cn } from '@/utils';
+import { usePathname } from 'next/navigation';
 import {
   faBars,
   faBuilding,
   faClose,
   faUserCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import { Accordion } from "./Accordion";
-import { useCallback, useMemo, useState } from "react";
+} from '@fortawesome/free-solid-svg-icons';
+import { Accordion } from './Accordion';
+import { useCallback, useMemo, useState } from 'react';
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -22,7 +22,7 @@ export function Sidebar() {
 
   const pageTitle = useMemo(
     () => MENU_ITEMS.find(({ path }) => path === pathname)?.text,
-    [pathname]
+    [pathname],
   );
 
   const closeOnMobile = useCallback(() => setIsOpenOnMobile(false), []);
@@ -43,8 +43,8 @@ export function Sidebar() {
       </div>
       <Container
         className={cn(
-          "absolute h-screen left-0 z-10 group sm:flex pt-7 pb-4 px-3 bg-sidebar sm:min-w-sidebar sm:w-sidebar sm:hover:w-sidebar-open transition-all overflow-hidden border-none rounded-none gap-y-7",
-          isOpenOnMobile ? "fixed flex w-screen" : "hidden"
+          'absolute h-screen left-0 z-10 group sm:flex pt-7 pb-4 px-3 bg-sidebar sm:min-w-sidebar sm:w-sidebar sm:hover:w-sidebar-open transition-all overflow-hidden border-none rounded-none gap-y-7',
+          isOpenOnMobile ? 'fixed flex w-screen' : 'hidden',
         )}
       >
         <Link href="/">
@@ -57,7 +57,7 @@ export function Sidebar() {
               alt="Logo"
             />
             <span
-              className={cn("text-3xl text-orange-700", breeFont.className)}
+              className={cn('text-3xl text-orange-700', breeFont.className)}
             >
               Mason
             </span>
@@ -80,8 +80,8 @@ export function Sidebar() {
                 key={id}
                 href={path}
                 className={cn(
-                  "flex flex-nowrap gap-4 items-center text-gray-400 hover:text-white hover:bg-primary rounded-md transition-colors",
-                  isCurrentPage && "bg-primary text-white"
+                  'flex flex-nowrap gap-4 items-center text-gray-400 hover:text-white hover:bg-primary rounded-md transition-colors',
+                  isCurrentPage && 'bg-primary text-white',
                 )}
                 onClick={closeOnMobile}
               >
@@ -96,21 +96,22 @@ export function Sidebar() {
         <div className="mt-auto">
           <div
             className={cn(
-              "pt-4 border-t border-gray-700 absolute bottom-8 sm:group-hover:relative sm:group-hover:bottom-0 sm:group-hover:border-0",
-              isOpenOnMobile && "-bottom-14 sm:bottom-8"
+              'pt-4 border-t border-gray-700 absolute bottom-8 sm:group-hover:relative sm:group-hover:bottom-0 sm:group-hover:border-0',
+              isOpenOnMobile && '-bottom-14 sm:bottom-8',
             )}
           >
             <Icon
               className={cn(
-                "mx-2 hidden sm:block sm:group-hover:hidden text-xl text-gray-400"
+                'mx-2 hidden sm:block sm:group-hover:hidden text-xl text-gray-400',
               )}
               icon={faUserCircle}
             />
           </div>
           <div
             className={cn(
-              "flex sm:group-hover:translate-y-0 sm:w-60 translate-y-44 transition-transform flex-col",
-              isOpenOnMobile && "translate-y-0 sm:translate-y-44 w-full sm:w-60"
+              'flex sm:group-hover:translate-y-0 sm:w-60 translate-y-44 transition-transform flex-col',
+              isOpenOnMobile &&
+                'translate-y-0 sm:translate-y-44 w-full sm:w-60',
             )}
           >
             <Accordion

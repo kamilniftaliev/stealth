@@ -1,18 +1,18 @@
-import { cn, match } from "@/utils";
+import { cn, match } from '@/utils';
 import {
   faArrowLeft,
   faCheck,
   faClose,
   faSearch,
-} from "@fortawesome/free-solid-svg-icons";
-import { Container, ContainerTitle, Document, Icon, Input } from "..";
+} from '@fortawesome/free-solid-svg-icons';
+import { Container, ContainerTitle, Document, Icon, Input } from '..';
 import {
   ChangeEvent,
   Dispatch,
   SetStateAction,
   useCallback,
   useState,
-} from "react";
+} from 'react';
 
 type Props = {
   selectedDocs: Document[];
@@ -20,19 +20,19 @@ type Props = {
 };
 
 export function SelectedDocuments({ selectedDocs, setSelectedDocs }: Props) {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
 
   const onSearch = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   }, []);
 
   const unselectDocument = useCallback(
-    (docId: Document["id"]) => {
+    (docId: Document['id']) => {
       setSelectedDocs((selectedDocs: Document[]) =>
-        selectedDocs.filter(({ id }) => id !== docId)
+        selectedDocs.filter(({ id }) => id !== docId),
       );
     },
-    [setSelectedDocs]
+    [setSelectedDocs],
   );
 
   const documents = selectedDocs.filter((doc) => match(doc.name, searchValue));
@@ -72,7 +72,7 @@ export function SelectedDocuments({ selectedDocs, setSelectedDocs }: Props) {
               </span>
               <button
                 className={cn(
-                  "box-border border border-gray-300 rounded w-6 h-6"
+                  'box-border border border-gray-300 rounded w-6 h-6',
                 )}
               >
                 <Icon icon={faClose} />

@@ -1,5 +1,5 @@
-import { textToCollectionItem } from "@/utils";
-import { CITIES } from "./constants";
+import { textToCollectionItem } from '@/utils';
+import { CITIES } from './constants';
 
 export function generateDocumentsForCity(documentName: string) {
   return CITIES.map((city) => `${city} ${documentName}`).map((documentName) => {

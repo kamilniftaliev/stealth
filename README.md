@@ -1,5 +1,7 @@
 # Stealth
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/497d3694-ec9a-4d78-9ca9-e780f4acb5a7/deploy-status)](https://app.netlify.com/sites/stealth-documents/deploys)
+
 Demo: https://stealth-documents.netlify.app
 
 Figma: [Link](<https://www.figma.com/file/BCkNwI00OAdMSCp45TEVvU/1.10.2024-Front-end-Developer-Challenge-(Kamil)?type=design&node-id=1481-65958&mode=design&t=xO4nEyb703gbJhL4-0>)

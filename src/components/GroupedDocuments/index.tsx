@@ -1,6 +1,6 @@
-import { faArrowRight, faPen } from "@fortawesome/free-solid-svg-icons";
-import { Accordion, Container, Icon } from "..";
-import { cn } from "@/utils";
+import { faArrowRight, faPen } from '@fortawesome/free-solid-svg-icons';
+import { Accordion, Container, Icon } from '..';
+import { cn } from '@/utils';
 
 export type Document = {
   id: string;
@@ -32,35 +32,37 @@ export function GroupedDocuments({
           button={title}
           body={
             !documents.length ? (
-              <p className="text-gray-500 text-xs font-semibold text-center py-4">No documents here</p>
+              <p className="text-gray-500 text-xs font-semibold text-center py-4">
+                No documents here
+              </p>
             ) : (
-            <ul className="flex flex-col p-2 gap-2.5">
-              {documents.map((doc) => {
-                const isSelected = selectedDocuments.some(
-                  ({ id }) => id === doc.id
-                );
+              <ul className="flex flex-col p-2 gap-2.5">
+                {documents.map((doc) => {
+                  const isSelected = selectedDocuments.some(
+                    ({ id }) => id === doc.id,
+                  );
 
-                return (
-                  <li
-                    key={doc.id}
-                    className="flex justify-between items-center px-2"
-                    onClick={() => onDocumentSelect(doc)}
-                  >
-                    <span className="py-2">{doc.name}</span>
-                    <button
-                      className={cn(
-                        "box-border border border-gray-300 rounded w-6 h-6"
-                      )}
+                  return (
+                    <li
+                      key={doc.id}
+                      className="flex justify-between items-center px-2"
+                      onClick={() => onDocumentSelect(doc)}
                     >
-                      <Icon
-                        className={cn(isSelected && "w-7/12")}
-                        icon={isSelected ? faPen : faArrowRight}
-                      />
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
+                      <span className="py-2">{doc.name}</span>
+                      <button
+                        className={cn(
+                          'box-border border border-gray-300 rounded w-6 h-6',
+                        )}
+                      >
+                        <Icon
+                          className={cn(isSelected && 'w-7/12')}
+                          icon={isSelected ? faPen : faArrowRight}
+                        />
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
             )
           }
         />
@@ -69,4 +71,4 @@ export function GroupedDocuments({
   );
 }
 
-export { GROUPED_DOCUMENTS } from "./constants";
+export { GROUPED_DOCUMENTS } from './constants';

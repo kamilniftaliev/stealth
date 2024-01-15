@@ -1,10 +1,10 @@
-import { cn } from "@/utils";
-import { Container, ContainerProps, Icon, IconProps } from "..";
-import { SIZES } from "./constants";
+import { cn } from '@/utils';
+import { Container, ContainerProps, Icon, IconProps } from '..';
+import { SIZES } from './constants';
 
-type Props = Pick<ContainerProps, "className" | "children"> & {
-  leftIcon?: IconProps["icon"];
-  rightIcon?: IconProps["icon"];
+type Props = Pick<ContainerProps, 'className' | 'children'> & {
+  leftIcon?: IconProps['icon'];
+  rightIcon?: IconProps['icon'];
   size?: keyof typeof SIZES;
   onClick?: () => void;
 };
@@ -15,7 +15,7 @@ export function Button({
   className,
   children,
   onClick,
-  size = "sm",
+  size = 'sm',
 }: Props) {
   const sizeClasses = SIZES[size];
 
@@ -23,9 +23,9 @@ export function Button({
     <Container
       direction="row"
       className={cn(
-        "inline-flex cursor-pointer border-gray-200 text-gray-600 font-semibold items-center",
+        'inline-flex cursor-pointer border-gray-200 text-gray-600 font-semibold items-center',
         sizeClasses.container,
-        className
+        className,
       )}
       onClick={onClick}
     >

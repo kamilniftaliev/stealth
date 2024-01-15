@@ -1,4 +1,4 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {
   Container,
   ContainerTitle,
@@ -8,16 +8,16 @@ import {
   Input,
   Tag,
   TagColors,
-} from "..";
-import { Checkbox } from "../Checkbox";
-import { Document } from "..";
+  Document,
+} from '..';
+import { Checkbox } from '../Checkbox';
 import {
   ChangeEvent,
   Dispatch,
   SetStateAction,
   useCallback,
   useState,
-} from "react";
+} from 'react';
 import {
   JOB_TEMPLATES,
   JobTemplate,
@@ -27,8 +27,8 @@ import {
   PositionLevel,
   SUBSIDIARIES,
   Subsidiary,
-} from "@/constants";
-import { match } from "@/utils";
+} from '@/constants';
+import { match } from '@/utils';
 
 type SetState = Dispatch<
   SetStateAction<Array<JobTemplate | Location | Subsidiary | PositionLevel>>
@@ -40,7 +40,7 @@ type Props = {
 };
 
 export function AvailableDocuments({ selectedDocs, setSelectedDocs }: Props) {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const [jobTemplates, setJobTemplate] = useState<JobTemplate[]>([]);
   const [locations, setLocation] = useState<Location[]>([]);
   const [subsidiaries, setSubsidiary] = useState<Subsidiary[]>([]);
@@ -56,28 +56,28 @@ export function AvailableDocuments({ selectedDocs, setSelectedDocs }: Props) {
 
   const filters = [
     {
-      label: "Job Templates",
+      label: 'Job Templates',
       selectedItems: jobTemplates,
       items: JOB_TEMPLATES,
       setState: setJobTemplate,
       color: TagColors.Purple,
     },
     {
-      label: "Locations",
+      label: 'Locations',
       selectedItems: locations,
       items: LOCATIONS,
       setState: setLocation,
       color: TagColors.Blue,
     },
     {
-      label: "Subsidiary",
+      label: 'Subsidiary',
       selectedItems: subsidiaries,
       items: SUBSIDIARIES,
       setState: setSubsidiary,
       color: TagColors.Yellow,
     },
     {
-      label: "Seniority",
+      label: 'Seniority',
       selectedItems: positionLevels,
       items: POSITION_LEVELS,
       setState: setPositionLevel,
@@ -89,7 +89,7 @@ export function AvailableDocuments({ selectedDocs, setSelectedDocs }: Props) {
       : {
           ...filter,
           items: filter.items.filter((item) => match(item.label, searchValue)),
-        }
+        },
   );
 
   const groupedDocuments = GROUPED_DOCUMENTS.map(({ documents, ...group }) => ({
@@ -120,7 +120,7 @@ export function AvailableDocuments({ selectedDocs, setSelectedDocs }: Props) {
         return [...selectedDocs, doc];
       });
     },
-    [setSelectedDocs]
+    [setSelectedDocs],
   );
 
   return (
@@ -137,7 +137,7 @@ export function AvailableDocuments({ selectedDocs, setSelectedDocs }: Props) {
       <p>Filter by:</p>
 
       <div className="grid grid-cols-2 gap-3">
-        {filters.map(({ color, setState, ...filter }) => (
+        {filters.map(({ setState, ...filter }) => (
           <Dropdown key={filter.label} onSelect={setState} {...filter} />
         ))}
         {filterApplied && (
@@ -153,7 +153,7 @@ export function AvailableDocuments({ selectedDocs, setSelectedDocs }: Props) {
                   color={color}
                   onDelete={() => deleteTag(setState, item.value)}
                 />
-              ))
+              )),
             )}
           </Container>
         )}

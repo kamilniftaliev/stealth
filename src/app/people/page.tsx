@@ -1,5 +1,5 @@
-"use client";
+'use client';
 
 export default function People() {
-  return "People page";
+  return 'People page';
 }

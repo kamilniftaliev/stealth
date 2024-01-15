@@ -1,8 +1,8 @@
-import { Button, Container } from "@/components";
+import { Button, Container } from '@/components';
 import {
   faChevronLeft,
   faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 export function Footer() {
   return (

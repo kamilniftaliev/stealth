@@ -1,26 +1,26 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-const title = "Stealth";
+const title = 'Stealth';
 const description =
-  "Stealth Dashboard - Select Agreements, Notices and Other Documents";
+  'Stealth Dashboard - Select Agreements, Notices and Other Documents';
 
-const DOMAIN_URL = process.env.URL || "http://localhost:3000";
+const DOMAIN_URL = process.env.URL || 'http://localhost:3000';
 
 const DOMAIN = new URL(DOMAIN_URL);
 
 export const metadata: Metadata = {
   title,
   description,
-  keywords: "stealth, documents, agreements",
-  robots: "index, follow",
-  manifest: "/manifest.json",
+  keywords: 'stealth, documents, agreements',
+  robots: 'index, follow',
+  manifest: '/manifest.json',
   icons: {
     icon: `${DOMAIN}images/logo/192.png`,
     apple: `${DOMAIN}images/logo/192.png`,
   },
   metadataBase: DOMAIN,
   openGraph: {
-    type: "website",
+    type: 'website',
     url: DOMAIN,
     title,
     description,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     title: title,
-    statusBarStyle: "black-translucent",
+    statusBarStyle: 'black-translucent',
   },
   formatDetection: {
     telephone: true,

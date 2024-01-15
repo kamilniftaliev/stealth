@@ -1,6 +1,6 @@
-import "./globals.css";
-import { Sidebar } from "./Sidebar";
-import { inter } from "@/constants";
+import './globals.css';
+import { Sidebar } from './Sidebar';
+import { inter } from '@/constants';
 
 export default function RootLayout({
   children,
@@ -19,4 +19,4 @@ export default function RootLayout({
   );
 }
 
-export { metadata } from "@/constants";
+export { metadata } from '@/constants';

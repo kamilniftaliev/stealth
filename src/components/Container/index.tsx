@@ -1,24 +1,24 @@
-import { cn } from "@/utils";
-import { HTMLAttributes, forwardRef } from "react";
-import { CONTAINER_TITLE_SIZES } from "./constants";
+import { cn } from '@/utils';
+import { HTMLAttributes, forwardRef } from 'react';
+import { CONTAINER_TITLE_SIZES } from './constants';
 
 export type ContainerProps = HTMLAttributes<HTMLDivElement> & {
-  direction?: "col" | "row";
+  direction?: 'col' | 'row';
 };
 
 export const Container = forwardRef<HTMLDivElement, ContainerProps>(
-  function Container({ direction = "col", className, ...props }, ref) {
+  function Container({ direction = 'col', className, ...props }, ref) {
     return (
       <div
         className={cn(
           `flex flex-${direction} gap-3 bg-white rounded-lg border border-gray-300 p-4`,
-          className
+          className,
         )}
         ref={ref}
         {...props}
       />
     );
-  }
+  },
 );
 
 type ContainerTitleProps = HTMLAttributes<HTMLParagraphElement> & {
@@ -27,12 +27,12 @@ type ContainerTitleProps = HTMLAttributes<HTMLParagraphElement> & {
 
 export function ContainerTitle({
   className,
-  size = "sm",
+  size = 'sm',
   ...props
 }: ContainerTitleProps) {
   const sizeClasses = CONTAINER_TITLE_SIZES[size];
 
   return (
-    <p className={cn("text-gray-900", sizeClasses, className)} {...props} />
+    <p className={cn('text-gray-900', sizeClasses, className)} {...props} />
   );
 }

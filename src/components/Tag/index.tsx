@@ -1,6 +1,6 @@
-import { Container, Icon, IconProps } from "..";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { COLORS, TagColors } from "./constants";
+import { Container, Icon } from '..';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { COLORS, TagColors } from './constants';
 
 type Props = {
   label: string;
@@ -26,4 +26,4 @@ export function Tag({ label, color: colorName, onDelete }: Props) {
   );
 }
 
-export { TagColors } from "./constants";
+export { TagColors } from './constants';

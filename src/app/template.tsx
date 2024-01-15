@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react';
 
 export default function Template({ children }: PropsWithChildren) {
   return (

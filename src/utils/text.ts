@@ -1,4 +1,4 @@
-import { faker } from "@faker-js/faker";
+import { faker } from '@faker-js/faker';
 
 faker.seed(1);
 
@@ -10,7 +10,7 @@ faker.seed(1);
 export function textToCollectionItem(label: string) {
   return {
     label,
-    value: label.toLowerCase().replace(/\s+/g, "-") + faker.string.uuid(),
+    value: label.toLowerCase().replace(/\s+/g, '-') + faker.string.uuid(),
   };
 }
 

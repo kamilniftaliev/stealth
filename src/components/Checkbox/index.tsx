@@ -1,5 +1,5 @@
-import { cn } from "@/utils";
-import { Container, ContainerProps, Icon } from "..";
+import { cn } from '@/utils';
+import { Container, ContainerProps } from '..';
 
 type Props = ContainerProps & {
   label?: string;
@@ -22,16 +22,16 @@ export function Checkbox({
       <Container
         direction="row"
         className={cn(
-          "bg-gray-200 h-7 w-14 rounded-2xl p-1 border-0",
+          'bg-gray-200 h-7 w-14 rounded-2xl p-1 border-0',
           className,
-          isChecked && color
+          isChecked && color,
         )}
         {...props}
       >
         <span
           className={cn(
-            "aspect-square h-full rounded-full bg-white left-full right-auto transition-transform",
-            isChecked && "translate-x-7"
+            'aspect-square h-full rounded-full bg-white left-full right-auto transition-transform',
+            isChecked && 'translate-x-7',
           )}
         />
       </Container>

@@ -1,5 +1,5 @@
-"use client";
+'use client';
 
 export default function Messaging() {
-  return "Messaging page";
+  return 'Messaging page';
 }
